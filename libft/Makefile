@@ -6,7 +6,7 @@
 #    By: igbraude <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/10/02 10:31:27 by igbraude     #+#   ##    ##    #+#        #
-#    Updated: 2018/11/11 14:44:29 by igbraude    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/12/11 10:39:06 by igbraude    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -24,7 +24,10 @@ SRCS = ft_atoi.c ft_atol.c ft_atoll.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_is
 	   ft_strrchr.c ft_strrev.c ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c \
 	   ft_swap.c ft_tolower.c ft_toupper.c ft_lstdel.c ft_lstdelone.c ft_lstmap.c \
 	   ft_lstnew.c ft_list_push_params.c ft_strjoinfree.c ft_strlen_endl.c \
-	   get_next_line.c
+	   get_next_line.c ft_len_nbr.c ft_uitoa.c ft_itoa_base_maj.c ft_itoa_base_min.c \
+	   ft_ultoa_base_min.c ft_putnbr_base.c ft_ltoa.c ft_lltoa.c ft_ultoa.c ft_ulltoa.c \
+	   ft_ulltoa_base_maj.c ft_ulltoa_base_min.c ft_ultoa_base_maj.c ft_len_unbr.c \
+	   ft_len_dnbr.c ft_dtoa.c ft_ldtoa.c
 
 DEPENDENCES = ft_atoi.o ft_atol.o ft_atoll.o ft_bzero.o ft_isalnum.o ft_isalpha.o ft_isascii.o \
 	   ft_isdigit.o ft_isprint.o ft_itoa.o ft_lstadd.o ft_lstiter.o ft_memalloc.o \
@@ -37,7 +40,10 @@ DEPENDENCES = ft_atoi.o ft_atol.o ft_atoll.o ft_bzero.o ft_isalnum.o ft_isalpha.
 	   ft_strrchr.o ft_strrev.o ft_strsplit.o ft_strstr.o ft_strsub.o ft_strtrim.o \
 	   ft_swap.o ft_tolower.o ft_toupper.o ft_lstdel.o ft_lstdelone.o ft_lstmap.o \
 	   ft_lstnew.o ft_list_push_params.o ft_strjoinfree.o ft_strlen_endl.o \
-	   get_next_line.o
+	   get_next_line.o ft_len_nbr.o ft_uitoa.o ft_itoa_base_maj.o ft_itoa_base_min.o \
+	   ft_ultoa_base_min.o ft_putnbr_base.o ft_ltoa.o ft_lltoa.o ft_ultoa.o ft_ulltoa.o \
+	   ft_ulltoa_base_maj.o ft_ulltoa_base_min.o ft_ultoa_base_maj.o ft_len_unbr.o \
+	   ft_len_dnbr.o ft_dtoa.o ft_ldtoa.o
 
 CC = gcc
 

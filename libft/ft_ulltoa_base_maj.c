@@ -1,48 +1,46 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_itoa.c                                        .::    .:/ .      .::   */
+/*   ft_ulltoa_base_maj.c                             .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: igbraude <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/02 17:40:25 by igbraude     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/08 14:33:24 by igbraude    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/12/08 18:05:08 by igbraude     #+#   ##    ##    #+#       */
+/*   Updated: 2018/12/10 14:33:28 by igbraude    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		*ft_itoa2(long n, int i, char *j)
+static char		*ft_ulltoa_base_maj2(unsigned long long n, int i, char *j,
+		int base)
 {
-	int neg;
-
-	neg = 1;
-	if (n < 0)
-	{
-		neg = -neg;
-		n = -n;
-	}
 	while (n > 0)
 	{
-		j[i] = n % 10 + 48;
-		n = n / 10;
-		i++;
+		if (n % base < 10)
+		{
+			j[i] = n % base + 48;
+			n = n / base;
+			i++;
+		}
+		else
+		{
+			j[i] = n % base + 55;
+			n = n / base;
+			i++;
+		}
 	}
-	if (neg == -1)
-		j[i++] = '-';
 	j[i] = '\0';
 	return (ft_strrev(j));
 }
 
-char			*ft_itoa(int n)
+char			*ft_ulltoa_base_maj(unsigned long long n, int base)
 {
 	int		i;
 	char	*j;
-	long	nbis;
 
-	nbis = n;
-	j = (char *)malloc(sizeof(char) * (ft_len_i(n, 10) + 1));
+	j = (char *)malloc(sizeof(char) * (ft_len_ull(n, base) + 1));
 	if (j == NULL)
 		return (0);
 	i = 0;
@@ -52,5 +50,5 @@ char			*ft_itoa(int n)
 		j[1] = '\0';
 		return (j);
 	}
-	return (j = ft_itoa2(n, i, j));
+	return (j = ft_ulltoa_base_maj2(n, i, j, base));
 }

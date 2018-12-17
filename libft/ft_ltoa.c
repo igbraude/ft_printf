@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_itoa.c                                        .::    .:/ .      .::   */
+/*   ft_ltoa.c                                        .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: igbraude <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/02 17:40:25 by igbraude     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/08 14:33:24 by igbraude    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/12/08 17:06:49 by igbraude     #+#   ##    ##    #+#       */
+/*   Updated: 2018/12/10 14:35:13 by igbraude    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		*ft_itoa2(long n, int i, char *j)
+static char		*ft_ltoa2(long long n, int i, char *j)
 {
-	int neg;
+	int			neg;
 
 	neg = 1;
 	if (n < 0)
@@ -35,14 +35,14 @@ static char		*ft_itoa2(long n, int i, char *j)
 	return (ft_strrev(j));
 }
 
-char			*ft_itoa(int n)
+char			*ft_ltoa(long n)
 {
-	int		i;
-	char	*j;
-	long	nbis;
+	int				i;
+	char			*j;
+	long long		nbis;
 
 	nbis = n;
-	j = (char *)malloc(sizeof(char) * (ft_len_i(n, 10) + 1));
+	j = (char *)malloc(sizeof(char) * (ft_len_l(n, 10) + 1));
 	if (j == NULL)
 		return (0);
 	i = 0;
@@ -52,5 +52,5 @@ char			*ft_itoa(int n)
 		j[1] = '\0';
 		return (j);
 	}
-	return (j = ft_itoa2(n, i, j));
+	return (j = ft_ltoa2(nbis, i, j));
 }

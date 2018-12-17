@@ -6,7 +6,7 @@
 /*   By: igbraude <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/04 18:52:07 by igbraude     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/11 14:46:01 by igbraude    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/11 10:39:51 by igbraude    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -34,6 +34,7 @@ void				ft_putchar(char c);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
 void				ft_putnbr(int n);
+void				ft_putnbr_base(int nb, int basenb);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putnbr_fd(int nb, int fd);
@@ -65,12 +66,33 @@ int					ft_isdigit(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 int					get_next_line(const int fd, char **line);
+size_t				ft_len_i(int nbr, int base);
+size_t				ft_len_ui(unsigned int nbr, int base);
+size_t				ft_len_l(long nbr, int base);
+size_t				ft_len_ll(long long nbr, int base);
+size_t				ft_len_ul(unsigned long nbr, int base);
+size_t				ft_len_ull(unsigned long long nbr, int base);
+size_t				ft_len_d(double nbr, int precision);
+size_t				ft_len_ld(long double nbr, int precision);
 long				ft_atol(const char *str);
 long long			ft_atoll(const char *str);
 size_t				ft_strlen(const char *s);
 size_t				ft_strlen_endl(char *str);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_itoa(int n);
+char				*ft_uitoa(unsigned int n);
+char				*ft_itoa_base_min(unsigned int n, int base);
+char				*ft_itoa_base_maj(unsigned int n, int base);
+char				*ft_ultoa_base_min(unsigned long n, int base);
+char				*ft_ultoa_base_maj(unsigned long n, int base);
+char				*ft_ulltoa_base_maj(unsigned long long n, int base);
+char				*ft_ulltoa_base_min(unsigned long long n, int base);
+char				*ft_ltoa(long n);
+char				*ft_ultoa(unsigned long n);
+char				*ft_lltoa(long long n);
+char				*ft_ulltoa(unsigned long long n);
+char				*ft_dtoa(double nbr, int precision);
+char				*ft_ldtoa(long double nbr, int precision);
 char				*ft_strdup(const char *s1);
 char				*ft_strnew(size_t size);
 char				*ft_strcpy(char *dst, const char *src);

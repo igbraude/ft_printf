@@ -6,7 +6,7 @@
 /*   By: igbraude <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/11/08 14:38:47 by igbraude     #+#   ##    ##    #+#       */
-/*   Updated: 2018/11/11 14:45:36 by igbraude    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/10 16:16:02 by igbraude    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -86,7 +86,7 @@ static	int			line_in_stock_line(int fd, char **line, char **stock_line)
 
 int					get_next_line(const int fd, char **line)
 {
-	static char		*stock_line[256];
+	static char		*stock_line[4864];
 	int				ret;
 	int				check_line;
 

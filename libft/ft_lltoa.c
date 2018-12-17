@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_itoa.c                                        .::    .:/ .      .::   */
+/*   ft_lltoa.c                                       .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: igbraude <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/02 17:40:25 by igbraude     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/08 14:33:24 by igbraude    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/12/08 17:09:18 by igbraude     #+#   ##    ##    #+#       */
+/*   Updated: 2018/12/11 10:40:11 by igbraude    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		*ft_itoa2(long n, int i, char *j)
+static char		*ft_lltoa2(unsigned long long n, int i, char *j, long long nbr)
 {
 	int neg;
 
 	neg = 1;
-	if (n < 0)
+	if (nbr < 0)
 	{
 		neg = -neg;
-		n = -n;
+		n = -nbr;
+	}
+	else
+	{
+		n = nbr;
 	}
 	while (n > 0)
 	{
@@ -35,14 +39,14 @@ static char		*ft_itoa2(long n, int i, char *j)
 	return (ft_strrev(j));
 }
 
-char			*ft_itoa(int n)
+char			*ft_lltoa(long long n)
 {
-	int		i;
-	char	*j;
-	long	nbis;
+	int					i;
+	char				*j;
+	unsigned long long	nbis;
 
-	nbis = n;
-	j = (char *)malloc(sizeof(char) * (ft_len_i(n, 10) + 1));
+	nbis = 0;
+	j = (char *)malloc(sizeof(char) * (ft_len_ll(n, 10) + 1));
 	if (j == NULL)
 		return (0);
 	i = 0;
@@ -52,5 +56,5 @@ char			*ft_itoa(int n)
 		j[1] = '\0';
 		return (j);
 	}
-	return (j = ft_itoa2(n, i, j));
+	return (j = ft_lltoa2(nbis, i, j, n));
 }
