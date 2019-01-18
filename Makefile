@@ -6,19 +6,22 @@
 #    By: igbraude <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/12/15 14:48:13 by igbraude     #+#   ##    ##    #+#        #
-#    Updated: 2018/12/15 16:42:57 by igbraude    ###    #+. /#+    ###.fr      #
+#    Updated: 2019/01/18 15:19:36 by igbraude    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRCS = ft_printf.c function/ft_char_conversion.c function/ft_conv_index.c \
+SRCS = ft_printf.c function/ft_char_short_conversion.c function/ft_conv_index.c \
 	   function/ft_float_conversion.c function/ft_long_conversion.c \
 	   function/ft_parsing_function_struct.c function/ft_uint_conversion.c \
 	   function/ft_check_flag.c function/ft_int_conversion.c \
 	   function/ft_longlong_conversion.c function/ft_precision_and_size_fnct.c \
+	   function/ft_size_and_precision_change.c \
 	   function/ft_string_conversion.c function/ft_var_in_struct.c function/ft_charprint_add.c \
+	   function/ft_check_flag2.c function/ft_for_negative_stuff.c \
+	   function/ft_parsing_function_struct2.c \
 	   libft/ft_atoi.c  libft/ft_atol.c libft/ft_atoll.c libft/ft_bzero.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c \
 	   libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_lstadd.c libft/ft_lstiter.c libft/ft_memalloc.c \
 	   libft/ft_memccpy.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memdel.c libft/ft_memmove.c \
@@ -35,14 +38,18 @@ SRCS = ft_printf.c function/ft_char_conversion.c function/ft_conv_index.c \
 	   libft/ft_ulltoa_base_maj.c libft/ft_ulltoa_base_min.c libft/ft_ultoa_base_maj.c libft/ft_len_unbr.c \
 	   libft/ft_len_dnbr.c libft/ft_dtoa.c libft/ft_ldtoa.c
 
-DEPENDENCES =  ft_printf.o function/ft_char_conversion.o function/ft_conv_index.o \
+DEPENDENCES =  ft_printf.o function/ft_char_short_conversion.o function/ft_conv_index.o \
 			   function/ft_float_conversion.o function/ft_long_conversion.o \
 			   function/ft_parsing_function_struct.o function/ft_uint_conversion.o \
 			   function/ft_check_flag.o function/ft_int_conversion.o \
 			   function/ft_longlong_conversion.o \
 			   function/ft_precision_and_size_fnct.o \
+			   function/ft_size_and_precision_change.o \
+			   function/ft_check_flag2.o function/ft_for_negative_stuff.o \
 			   function/ft_string_conversion.o function/ft_var_in_struct.o function/ft_charprint_add.o \
-			   libft/ft_atoi.o  libft/ft_atol.o libft/ft_atoll.o libft/ft_bzero.o libft/ft_isalnum.o libft/ft_isalpha.o libft/ft_isascii.o \
+			   function/ft_parsing_function_struct2.o \
+			   libft/ft_atoi.o  libft/ft_atol.o libft/ft_atoll.o libft/ft_bzero.o libft/ft_isalnum.o \
+			   libft/ft_isalpha.o libft/ft_isascii.o \
 			   libft/ft_isdigit.o libft/ft_isprint.o libft/ft_itoa.o libft/ft_lstadd.o libft/ft_lstiter.o libft/ft_memalloc.o \
 			   libft/ft_memccpy.o libft/ft_memchr.o libft/ft_memcmp.o libft/ft_memcpy.o libft/ft_memdel.o libft/ft_memmove.o \
 			   libft/ft_memset.o libft/ft_putchar.o libft/ft_putchar_fd.o libft/ft_putendl.o libft/ft_putendl_fd.o libft/ft_putnbr.o \

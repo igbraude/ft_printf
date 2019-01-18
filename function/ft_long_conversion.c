@@ -6,7 +6,7 @@
 /*   By: igbraude <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/12/08 17:18:56 by igbraude     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/15 19:02:46 by igbraude    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/18 19:04:16 by igbraude    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,168 +16,70 @@
 
 int		get_ld_conv(t_funct *args)
 {
-	long i;
-	unsigned long ui;
-	char *str;
+	long			n;
+	unsigned long	n2;
+	char			*str;
 
-	i = va_arg(args->va, long);
-	if (i < 0)
-	{
-		if (args->size > 0 && args->precision > 0 && args->flag_aq_aq == 0)
-		{
-			args->size -= 1;
-		}
-		if (args->size > 0 && args->precision == -1 && args->flag_min == 1 &&
-				args->flag_add == 0 && args->flag_aq_aq == 0)
-			args->size -= 1;
-		if (args->size > 0 && args->precision == -1 && args->flag_0 == 0 &&
-				args->flag_aq_aq == 0 && args->flag_add == 0 &&
-				args->flag_min == 0)
-			args->size -= 1;
-		if (args->flag_0 == 1 && args->flag_aq_aq == 0 &&
-				args->precision > 0 && args->size == -1 &&
-				args->flag_add == 0 && args->flag_min == 0 && args->swap == 1)
-			args->precision -= 1;
-		args->flag_aq_aq = 0;
-		args->flag_add = 0;
-		ui = -i;
-		args->charprint += 1;
-	}
-	else
-		ui = i;
-	if (i < 0)
-		args->flag_add = 0;
-	if (!(str = ft_ultoa(ui)))
+	n2 = 0;
+	n = va_arg(args->va, long);
+	n2 = ft_negative_long(n, n2, args);
+	if (!(str = ft_ultoa(n2)))
 		return (0);
-	if (args->flag_aq_aq == 1)
-		ft_check_flag_aq_aq(args);
-	if (args->flag_min == 0)
-		ft_size_stuff(args, str, 0);
-	if (args->flag_add == 1)
-		ft_check_flag_add(args);
-	if (i < 0)
-		ft_putchar ('-');
-	ft_precision_stuff(args, str, 0);
-	if (args->precision != 0)
-		ft_putstr(str);
-	if (args->flag_min == 1)
-		ft_size_stuff(args, str, 0);
-	ft_charprint_add(args, str);
+	ft_go_to_check_flag(args, str);
 	ft_strdel(&str);
 	return (1);
 }
 
 int		get_lu_conv(t_funct *args)
 {
-	unsigned long i;
-	char *str;
+	unsigned long	i;
+	char			*str;
 
 	i = va_arg(args->va, unsigned long);
 	if (!(str = ft_ultoa(i)))
-	if (args->flag_aq_aq == 1)
-		ft_check_flag_aq_aq(args);
-	if (args->flag_min == 0)
-		ft_size_stuff(args, str, 0);
-	ft_precision_stuff(args, str, 0);
-	if (args->precision != 0)
-		ft_putstr(str);
-	if (args->flag_min == 1)
-		ft_size_stuff(args, str, 0);
+		return (0);
+	ft_go_to_check_flag_unsigned(args, str);
 	ft_strdel(&str);
-	ft_charprint_add(args, str);
 	return (1);
 }
 
 int		get_lo_conv(t_funct *args)
 {
-	unsigned long i;
-	char *str;
+	unsigned long	i;
+	char			*str;
 
 	i = va_arg(args->va, unsigned long);
 	if (!(str = ft_ultoa_base_min(i, 8)))
 		return (0);
-	if (args->flag_aq_aq == 1)
-		ft_check_flag_aq_aq(args);
-	if (args->flag_min == 0)
-		ft_size_stuff(args, str, 0);
-	if (args->flag_sharp == 1)
-		ft_check_flag_sharp(args, str);
-	ft_precision_stuff(args, str, 0);
-	if (args->precision != 0)
-		ft_putstr(str);
-	if (args->flag_min == 1)
-		ft_size_stuff(args, str, 0);
-	ft_charprint_add(args, str);
+	ft_go_to_check_flag_o(args, str);
 	ft_strdel(&str);
 	return (1);
 }
 
 int		get_lx_conv(t_funct *args)
 {
-	unsigned long i;
-	char *str;
+	unsigned long	i;
+	char			*str;
 
 	i = va_arg(args->va, unsigned long);
 	if (!(str = ft_ultoa_base_min(i, 16)))
 		return (0);
-	if (args->flag_sharp == 1 && args->precision <= 0)
-		args->size -= 1;
-	if (args->flag_sharp == 1)
-		args->precision += 1;
-	if (args->flag_sharp == 1 && args->precision > 0 && str[0] != '0')
-		args->size -= 2;
-	if (args->flag_sharp == 1 && args->flag_0 == 1 && str[0] != '0')
-		args->precision -= 2;
-	if (args->flag_sharp && str[0] == '0' && args->size > 0)
-		args->size += 2;
-
-	if (args->flag_aq_aq == 1)
-		ft_check_flag_aq_aq(args);
-	if (args->flag_min == 0)
-		ft_size_stuff(args, str, 0);
-	if (args->flag_sharp == 1)
-		ft_check_flag_sharp(args, str);
-	ft_precision_stuff(args, str, 0);
-	if (args->precision != 0)
-		ft_putstr(str);
-	if (args->flag_min == 1)
-		ft_size_stuff(args, str, 0);
-	ft_charprint_add(args, str);
+	parsing_size_n_precision_for_x(args, str);
+	ft_go_to_check_flag_x(args, str);
 	ft_strdel(&str);
 	return (1);
 }
 
-int		get_lX_conv(t_funct *args)
+int		get_lx_maj_conv(t_funct *args)
 {
-	unsigned long i;
-	char *str;
+	unsigned long	i;
+	char			*str;
 
 	i = va_arg(args->va, unsigned long);
 	if (!(str = ft_ultoa_base_maj(i, 16)))
 		return (0);
-	if (args->flag_sharp == 1 && args->precision <= 0)
-		args->size -= 1;
-	if (args->flag_sharp == 1)
-		args->precision += 1;
-	if (args->flag_sharp == 1 && args->precision > 0 && str[0] != '0')
-		args->size -= 2;
-	if (args->flag_sharp == 1 && args->flag_0 == 1 && str[0] != '0')
-		args->precision -= 2;
-	if (args->flag_sharp && str[0] == '0' && args->size > 0)
-		args->size += 2;
-
-	if (args->flag_aq_aq == 1)
-		ft_check_flag_aq_aq(args);
-	if (args->flag_min == 0)
-		ft_size_stuff(args, str, 0);
-	if (args->flag_sharp == 1)
-		ft_check_flag_sharp(args, str);
-	ft_precision_stuff(args, str, 0);
-	if (args->precision != 0)
-		ft_putstr(str);
-	if (args->flag_min == 1)
-		ft_size_stuff(args, str, 0);
-	ft_charprint_add(args, str);
+	parsing_size_n_precision_for_x(args, str);
+	ft_go_to_check_flag_x_maj(args, str);
 	ft_strdel(&str);
 	return (1);
 }

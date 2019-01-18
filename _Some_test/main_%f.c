@@ -6,7 +6,7 @@
 /*   By: igbraude <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/12/14 13:52:34 by igbraude     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/15 15:18:44 by igbraude    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/11 17:46:56 by igbraude    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,13 +17,13 @@
 int main ()
 {
 	double floa = 5.51;
-	double f = 625.65495594;
-	long double lf = 987654.154;
+	double f = 9756625.6549559951184;
+	long double lf = 99987654.1549491159199;
 	/*
 	**		Tout les test avec float
 	*/
-	dprintf(1, "dtoa : %s\n", ft_dtoa(floa, 16));
-
+	dprintf(1, "dtoa : %s\n", ft_dtoa(lf, 9));
+	ft_putstr(ft_ldtoa(lf,10));
 	dprintf (1, "\n\n\033[35m2- Some test with %%f :\n");
 	
 	/*

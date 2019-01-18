@@ -6,7 +6,7 @@
 /*   By: igbraude <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/12/15 16:09:14 by igbraude     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/15 17:24:55 by igbraude    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/16 16:15:37 by igbraude    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -62,5 +62,16 @@ int main ()
 	ft_putchar('\n');
 	ft_putnbr(ft_printf("Mine: %5%%2%%.5%-->"));
 	ft_putstr("\n\n");
+
+	ft_putnbr(dprintf(1,"real: %c-->", 0));
+	ft_putchar('\n');
+	ft_putnbr(ft_printf("Mine: %c-->", 0));
+	ft_putstr("\n\n");
+
+	ft_putnbr(dprintf(1,"real: %5c-->", 0));
+	ft_putchar('\n');
+	ft_putnbr(ft_printf("Mine: %5c-->", 0));
+	ft_putstr("\n\n");
+
 	return (0);
 }

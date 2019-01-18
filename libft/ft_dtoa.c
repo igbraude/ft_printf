@@ -6,7 +6,7 @@
 /*   By: igbraude <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/12/10 15:46:06 by igbraude     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/15 15:14:43 by igbraude    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/11 17:49:34 by igbraude    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -113,7 +113,8 @@ char			*ft_dtoa(double nbr, int precision)
 	nb = nbr;
 	size[1] = ft_len_ll((long long)nbr, 10);
 	size[0] = ft_len_d(nbr, precision);
-	if (!(str = (char *)malloc(sizeof(char) * (ft_len_ll((long long)nbr, 10) + precision) + 1)))
+	dprintf (1, "%d\n", size[0]);
+	if (!(str = (char *)malloc(sizeof(char) * (ft_len_d(nbr, 10) + precision) + 1)))
 			return (NULL);
 	if (nbr == 0)
 		return (ft_dtoa0(str, precision));

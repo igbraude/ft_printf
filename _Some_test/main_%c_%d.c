@@ -1,12 +1,25 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
+/*   main_%c_%d.c                                     .::    .:/ .      .::   */
+/*                                                 +:+:+   +:    +:  +:+:+    */
+/*   By: igbraude <marvin@le-101.fr>                +:+   +:    +:    +:+     */
+/*                                                 #+#   #+    #+    #+#      */
+/*   Created: 2019/01/16 16:43:02 by igbraude     #+#   ##    ##    #+#       */
+/*   Updated: 2019/01/18 19:10:16 by igbraude    ###    #+. /#+    ###.fr     */
+/*                                                         /                  */
+/*                                                        /                   */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                          LE - /            */
+/*                                                              /             */
 /*   main2.c                                          .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: igbraude <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/12/11 17:04:41 by igbraude     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/15 17:50:58 by igbraude    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/16 16:42:57 by igbraude    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -42,14 +55,13 @@ int main ()
 	
 	dprintf(1, "real %%-5c: %-5c|\n", c);
 	ft_printf("Mine %%-5c: %-5c|\n", c);
-
 	
 	/*
 	**		Tout les test avec d
 	*/
 
 	dprintf (1, "\n\n\033[32m2- Some test with %%d :\n");
-	
+
 	/*
 	**			%d only
 	*/
@@ -640,4 +652,101 @@ int main ()
 
 	dprintf(1, "real %%d: %d|\n", 0);
 	ft_printf("Mine %%d: %d|\n", 0);
+
+	dprintf(1, "real %%llX: %llX|\n", (unsigned long long)4294967296);
+	ft_printf("Mine %%llX: %llX|\n", (unsigned long long)4294967296);
+
+	dprintf(1, "real %%lX: %lX|\n", 4294967296);
+	ft_printf("Mine %%lX: %lX|\n", 4294967296);
+
+	dprintf(1, "real %%llx: %llx|\n", (unsigned long long)4294967296);
+	ft_printf("Mine %%llx: %llx|\n", (unsigned long long)4294967296);
+
+	dprintf(1, "real %%lx: %lx|\n", 4294967296);
+	ft_printf("Mine %%lX: %lx|\n", 4294967296);
+
+	dprintf(1, "real %%hx: %hx|\n", (unsigned short)4294967296);
+	ft_printf("mine %%hx: %hx|\n", (unsigned short)4294967296);
+
+	dprintf(1, "real %%hhx: %hhx|\n", (char)4294967296);
+	ft_printf("mine %%hhx: %hhx|\n", (char)4294967296);
+
+	dprintf(1, "real %%hx: %hx|\n", (unsigned short)32767);
+	ft_printf("Mine %%hx: %hx|\n", (unsigned short)32767);
+
+	dprintf(1, "real %%hx: %hx|\n", (unsigned short)65536);
+	ft_printf("Mine %%hx: %hx|\n", (unsigned short)65536);
+
+	dprintf(1, "real %%hhX: %hhX|\n", (unsigned char)32767);
+	ft_printf("Mine %%hhX: %hhX|\n", (unsigned char)32767);
+
+
+	dprintf(1, "real %%hx: %hx|\n", (unsigned short)127);
+	ft_printf("Mine %%hx: %hx|\n", (unsigned short)127);
+
+	dprintf(1, "real %%hhX: %hhX|\n", (char)127);
+	ft_printf("Mine %%hhX: %hhX|\n", (char)127);
+
+	dprintf(1, "real %%ho: %ho|\n", (unsigned short)4294967296);
+	ft_printf("Mine %%ho: %ho|\n", (unsigned short)4294967296);
+
+	dprintf(1, "real %%hho: %hho|\n", (char)4294967296);
+	ft_printf("Mine %%hho: %hho|\n", (char)4294967296);
+
+	dprintf(1, "real %%hu: %hu|\n", (unsigned short)4294967296);
+	ft_printf("Mine %%hu: %hu|\n", (unsigned short)4294967296);
+
+	dprintf(1, "real %%hhu: %hhu|\n", (char)4294967296);
+	ft_printf("Mine %%hhu: %hhu|\n", (char)4294967296);
+
+	dprintf(1, "real %%o: %o|\n", 0);
+	ft_printf("Mine %%o: %o|\n", 0);
+
+	dprintf(1, "real %%0.0o: %0.0o|\n", 0);
+	ft_printf("Mine %%0.0o: %0.0o|\n", 0);
+
+	dprintf(1, "real %%.0u: %.0u|\n", 0);
+	ft_printf("mine %%.0u: %.0u|\n", 0);
+
+	dprintf(1, "real %%.o: %.o|\n", 42);
+	ft_printf("Mine %%.o: %.o|\n", 42);
+
+	dprintf(1, "real %%05d: %05d|\n", -42);
+	ft_printf("Mine %%05d: %05d|\n", -42);
+
+	dprintf(1, "real %%05d: %05d|\n", 42);
+	ft_printf("Mine %%05d: %05d|\n", 42);
+
+	dprintf(1, "real %%0d: %0d|\n", 42);
+	ft_printf("Mine %%0d: %0d|\n", 42);
+
+	dprintf(1, "real %%0d: %0d|\n", -42);
+	ft_printf("Mine %%0d: %0d|\n", -42);
+
+	dprintf(1, "real %%03d: %03d|\n", -42);
+	ft_printf("Mine %%03d: %03d|\n", -42);
+
+	dprintf(1, "real %%0d: %0d|\n", -42);
+	ft_printf("Mine %%0d: %0d|\n", -42);
+
+	dprintf(1, "real %%.d: %.d|\n", 42);
+	ft_printf("Mine %%.d: %.d|\n", 42);
+
+	dprintf(1, "real %%.0d: %.0d|\n", 43);
+	ft_printf("Mine %%.0d: %.0d|\n", 43);
+
+	dprintf(1, "real %%5.d: %5.d|\n", 42);
+	ft_printf("Mine %%5.d: %5.d|\n", 42);
+
+	dprintf(1, "real %%5.0d: %5.0d|\n", 43);
+	ft_printf("Mine %%5.0d: %5.0d|\n", 43);
+
+	dprintf(1, "real %%5.0d: %5.0d|\n", 43);
+	ft_printf("Mine %%5.0d: %5.0d|\n", 43);
+
+	dprintf(1, "real %%hhd: %hhd|\n", (char)128);
+	ft_printf("Mine %%hhd: %hhd|\n", (char)128);
+
+	dprintf(1, "real %%hd: %hd|\n", (short)32768);
+	ft_printf("Mine %%hd: %hd|\n", (short)32768);
 }

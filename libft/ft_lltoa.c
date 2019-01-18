@@ -6,7 +6,7 @@
 /*   By: igbraude <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/12/08 17:09:18 by igbraude     #+#   ##    ##    #+#       */
-/*   Updated: 2018/12/11 10:40:11 by igbraude    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/16 14:01:28 by igbraude    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -24,9 +24,7 @@ static char		*ft_lltoa2(unsigned long long n, int i, char *j, long long nbr)
 		n = -nbr;
 	}
 	else
-	{
 		n = nbr;
-	}
 	while (n > 0)
 	{
 		j[i] = n % 10 + 48;
