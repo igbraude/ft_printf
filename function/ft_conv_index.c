@@ -64,7 +64,7 @@ void	check_conv_index_none(t_funct *args, const char **format)
 	if (ft_strcmp(args->conv, "..u") == 0)
 		get_u_conv(args);
 	if (ft_strcmp(args->conv, "..f") == 0)
-		return ;
+		get_f_conv(args);
 	if (ft_strcmp(args->conv, "..p") == 0)
 		get_p_conv(args);
 	check_conv_index_h(args);
@@ -133,7 +133,7 @@ void	check_conv_index_l(t_funct *args)
 		get_lu_conv(args);
 	check_conv_index_ll(args);
 	if (ft_strcmp(args->conv, ".lf") == 0)
-		return ;
+		get_lf_conv(args);
 	if (ft_strcmp(args->conv, ".Lf") == 0)
-		return ;
+		get_Lf_conv(args);
 }

@@ -113,7 +113,6 @@ char			*ft_dtoa(double nbr, int precision)
 	nb = nbr;
 	size[1] = ft_len_ll((long long)nbr, 10);
 	size[0] = ft_len_d(nbr, precision);
-	dprintf (1, "%d\n", size[0]);
 	if (!(str = (char *)malloc(sizeof(char) * (ft_len_d(nbr, 10) + precision) + 1)))
 			return (NULL);
 	if (nbr == 0)

@@ -131,7 +131,7 @@ int null = 0;
 
 ft_printf ("\nFlag # :\n");
 ft_printf ("o : unsigned int octal : %#o\n", en);
-ft_printf ("o null : unsigned octal : %#o\n",null);
+ft_printf ("o null : unsigned octal : %#o\n", null);
 ft_printf ("o : unsigned int octal : precision 0 :  %#.0o\n", en);
 ft_printf ("o : unsigned int octal : precision 5 :  %#.5o\n", en);
 ft_printf ("x : unsigned int hexadecimal, lettre en minuscule : %#x\n", en);

@@ -56,7 +56,6 @@ int		get_lf_conv(t_funct *args)
 	if (args->precision > -1)
 		if (!(str = ft_dtoa(i, args->precision)))
 			return (0);
-
 	if (i < 0)
 		str++;
 	if (args->size > 0 && args->precision < 0)
@@ -74,7 +73,6 @@ int		get_lf_conv(t_funct *args)
 		ft_putchar ('.');
 	if (args->flag_min == 1)
 		ft_size_print(args, str);
-	ft_charprint_add(args, str);
 	ft_strdel(&str);
 	return (1);
 	return (1);
@@ -123,7 +121,6 @@ int		get_Lf_conv(t_funct *args)
 	if (args->precision > -1)
 		if (!(str = ft_ldtoa(i, args->precision)))
 			return (0);
-
 	if (i < 0)
 		str++;
 	if (args->size > 0 && args->precision < 0)
@@ -141,7 +138,6 @@ int		get_Lf_conv(t_funct *args)
 		ft_putchar ('.');
 	if (args->flag_min == 1)
 		ft_size_print(args, str);
-	ft_charprint_add(args, str);
 	ft_strdel(&str);
 	return (1);
 	return (1);
@@ -215,9 +211,6 @@ int		get_f_conv(t_funct *args)
 		ft_putchar ('.');
 	if (args->flag_min == 1)
 		ft_size_print(args, str);
-	ft_charprint_add(args, str);
-	ft_strdel(&str);
-	return (1);
 	ft_strdel(&str);
 	return (1);
 }

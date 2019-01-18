@@ -75,8 +75,14 @@ void	ft_go_to_check_flag_o(t_funct *args, char *str)
 		ft_check_flag_sharp(args, str);
 	ft_precision_print(args, str);
 	args->charprint += (int)ft_strlen(str);
-	if (str[0] != '0' || (args->size2 == -1 && args->precision2 == -1))
-		ft_putstr(str);
+	if ((str[0] != '0' || args->precision2  != 0))
+	{
+		if (str[0] != '0' || args->flag_sharp == 0)
+		{
+			args->charprint += (int)ft_strlen(str);
+			ft_putstr(str);
+		}
+	}
 	if (args->flag_min == 1)
 		ft_size_print(args, str);
 }

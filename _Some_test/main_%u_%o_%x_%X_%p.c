@@ -37,9 +37,15 @@ int main ()
 	
 	dprintf(1, "real %%o: %o|\n", d);
 	ft_printf("Mine %%o: %o|\n", d);
-	
+
+	dprintf(1, "real %%o: %o|\n", 0);
+	ft_printf("Mine %%o: %o|\n", 0);
+
 	dprintf(1, "real %%#o: %#o|\n", d);
 	ft_printf("Mine %%#o: %#o|\n", d);
+
+	dprintf(1, "real %%#o: %#o|\n", 0);
+	ft_printf("Mine %%#o: %#o|\n", 0);
 
 	dprintf(1, "real %%#0o: %#0o|\n", d);
 	ft_printf("Mine %%#0o: %#0o|\n", d);
