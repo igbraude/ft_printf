@@ -90,6 +90,9 @@ void	ft_go_to_check_flag_unsigned(t_funct *args, char *str);
 void	ft_go_to_check_flag_x_maj(t_funct *args, char *str);
 void	ft_go_to_check_flag_x(t_funct *args, char *str);
 void	ft_go_to_check_flag_o(t_funct *args, char *str);
+void	ft_go_to_check_flag_f(t_funct *args, char *str, double i);
+void	ft_go_to_check_flag_lf(t_funct *args, char *str, double i);
+void	ft_go_to_check_flag_Lf(t_funct *args, char *str, long double i);
 
 /*
 **		Fonction pour les precision et size
@@ -116,5 +119,6 @@ void				ft_charprint_add(t_funct *args, char *str);
 unsigned int		ft_negative_int(int n, unsigned int n2, t_funct *args);
 unsigned long		ft_negative_long(long n, unsigned long n2, t_funct *args);
 unsigned long long	ft_negative_long_long(long long n, unsigned long long n2, t_funct *args);
+void				ft_negative_double(t_funct *args);
 
 #endif

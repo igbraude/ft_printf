@@ -20,7 +20,7 @@ SRCS = ft_printf.c function/ft_char_short_conversion.c function/ft_conv_index.c 
 	   function/ft_longlong_conversion.c function/ft_precision_and_size_fnct.c \
 	   function/ft_size_and_precision_change.c \
 	   function/ft_string_conversion.c function/ft_var_in_struct.c function/ft_charprint_add.c \
-	   function/ft_check_flag2.c function/ft_for_negative_stuff.c \
+	   function/ft_check_flag2.c function/ft_check_flag3.c function/ft_for_negative_stuff.c \
 	   function/ft_parsing_function_struct2.c \
 	   libft/ft_atoi.c  libft/ft_atol.c libft/ft_atoll.c libft/ft_bzero.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c \
 	   libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_lstadd.c libft/ft_lstiter.c libft/ft_memalloc.c \
@@ -45,7 +45,7 @@ DEPENDENCES =  ft_printf.o function/ft_char_short_conversion.o function/ft_conv_
 			   function/ft_longlong_conversion.o \
 			   function/ft_precision_and_size_fnct.o \
 			   function/ft_size_and_precision_change.o \
-			   function/ft_check_flag2.o function/ft_for_negative_stuff.o \
+			   function/ft_check_flag2.o function/ft_check_flag3.o function/ft_for_negative_stuff.o \
 			   function/ft_string_conversion.o function/ft_var_in_struct.o function/ft_charprint_add.o \
 			   function/ft_parsing_function_struct2.o \
 			   libft/ft_atoi.o  libft/ft_atol.o libft/ft_atoll.o libft/ft_bzero.o libft/ft_isalnum.o \

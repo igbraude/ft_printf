@@ -28,13 +28,15 @@ int		get_s_conv(t_funct *args)
 		args->size -= ft_strlen(str);
 	else if (args->precision2 > 0)
 		args->size -= args->precision;
-	str2 = ft_strsub(str, 0, args->precision);
+	if (args->precision > 0)
+		str2 = ft_strsub(str, 0, args->precision);
 	if (args->flag_min == 0)
 		ft_size_print(args, str2);
 	ft_putstr(str2);
 	args->charprint += (int)ft_strlen(str2);
 	if (args->flag_min == 1)
 		ft_size_print(args, str2);
-	ft_strdel(&str2);
+	if (args->precision > 0)
+		ft_strdel(&str2);
 	return (1);
 }

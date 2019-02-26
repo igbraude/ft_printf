@@ -26,13 +26,6 @@ int		ft_index_modif_len_flag_funct2(t_funct *args, const char **format)
 	if (**format == 'l')
 	{
 		*format += 1;
-		if (**format == 'f')
-		{
-			args->conv = "lf";
-			get_lf_conv(args);
-			ft_index_conv_funct(args, format);
-			return (0);
-		}
 		args->conv = ".l";
 		ft_index_conv_funct(args, format);
 		return (0);
@@ -45,14 +38,9 @@ int		ft_index_modif_len_flag_funct3(t_funct *args, const char **format)
 	if (**format == 'L')
 	{
 		*format += 1;
-		if (**format == 'f')
-		{
-			args->conv = "Lf";
-			get_lf_conv(args);
-			ft_index_conv_funct(args, format);
-			return (0);
-		}
 		args->conv = ".L";
+		ft_index_conv_funct(args, format);
+		return (0);
 	}
 	return (1);
 }
