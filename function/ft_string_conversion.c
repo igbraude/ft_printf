@@ -24,17 +24,24 @@ int		get_s_conv(t_funct *args)
 	str = va_arg(args->va, char *);
 	if (str == NULL)
 	{
-		str = "(null)";
+		str2 = ft_strnew(6);
+		str2 = "(null)";
 	}
-	if (args->precision2 > (int)ft_strlen(str))
-		args->size -= ft_strlen(str);
+	else
+	{
+		str2 = ft_strnew(ft_strlen(str));
+		str2 = str;
+	}
+	if (args->precision2 > (int)ft_strlen(str2))
+		args->size -= ft_strlen(str2);
 	else if (args->precision2 > 0)
 		args->size -= args->precision;
 	if (args->precision > 0)
-		str2 = ft_strsub(str, 0, args->precision);
+		str2 = ft_strsub(str2, 0, args->precision);
 	if (args->flag_min == 0)
 		ft_size_print(args, str2);
-	ft_putstr(str2);
+	if(!(args->precision == 0))
+		ft_putstr(str2);
 	args->charprint += (int)ft_strlen(str2);
 	if (args->flag_min == 1)
 		ft_size_print(args, str2);
