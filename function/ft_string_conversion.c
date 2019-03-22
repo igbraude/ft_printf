@@ -23,7 +23,9 @@ int		get_s_conv(t_funct *args)
 	i = 0;
 	str = va_arg(args->va, char *);
 	if (str == NULL)
+	{
 		str = "(null)";
+	}
 	if (args->precision2 > (int)ft_strlen(str))
 		args->size -= ft_strlen(str);
 	else if (args->precision2 > 0)
